@@ -1,0 +1,76 @@
+/*******************************BODY TAGS********************************/
+html, body {
+    overflow-x: hidden;
+}
+p{
+    font-size: 800%;
+}
+footer{
+    background-color: #6c757d;
+}
+/************************************************************************/
+/********************************CLASSES*********************************/
+.spinning-logo{
+    margin: 0 1rem 0 0rem;
+}
+/******************NAVBAR***************/
+.nav
+{
+   position: fixed;
+   top: 0px;
+}
+.nav-item{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1em !important;
+    padding: 0 2% 0 0;
+}
+.navbar-brand{
+    width: 100%;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em !important;
+    font-weight: 500;
+    color: white;
+    position: fixed;
+}
+.navbar-nav{
+    margin: 0;
+}
+a.navbar-brand {
+    display: contents;
+}
+div.container{
+    margin-right: 2%;
+}
+/***************************************/
+/**************FOOTER*******************/
+.social-icon{
+    margin: 2.5% 2.5% 2.5% 2.5%;
+    
+    display: inline;
+    text-decoration: none;
+    color: #ffff;
+}
+.footer-class{
+    text-align: center;   
+}
+.footer-icons{
+    text-align: center;
+    padding: 5% 0 0 0;
+}
+.footer-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75em !important;
+    display: block;
+    text-align: center;
+    padding: 5% 0 5% 0;
+    color: white;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color:inherit;
+}
+/***************************************/
+/*************************************************************************/
+/*****************************IDs*****************************************/
+/*************************************************************************/
