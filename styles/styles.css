@@ -5,15 +5,12 @@ html, body {
 p{
     font-size: 800%;
 }
-footer{
-    background-color: #6c757d;
-}
 /************************************************************************/
 /********************************CLASSES*********************************/
 .spinning-logo{
     margin: 0 1rem 0 0rem;
 }
-/******************NAVBAR***************/
+/******************NAVBAR-COMMON TO ALL***************/
 .nav
 {
    position: fixed;
@@ -39,24 +36,28 @@ footer{
 a.navbar-brand {
     display: contents;
 }
+.navbar .navbar-collapse {
+    text-align: center;
+  }
 div.container{
     margin-right: 2%;
 }
 /***************************************/
-/**************FOOTER*******************/
+/**************FOOTER COMMON TO ALL*******************/
 .social-icon{
     margin: 2.5% 2.5% 2.5% 2.5%;
     
     display: inline;
     text-decoration: none;
     color: #ffff;
+    background-color: #6c757d;
 }
-.footer-class{
-    text-align: center;   
-}
+
 .footer-icons{
     text-align: center;
     padding: 5% 0 0 0;
+    background-color: #6c757d;
+    
 }
 .footer-text{
     font-family: 'Montserrat', sans-serif;
@@ -65,6 +66,7 @@ div.container{
     text-align: center;
     padding: 5% 0 5% 0;
     color: white;
+    background-color: #6c757d;
 }
 a, a:hover, a:focus, a:active {
     text-decoration: none;
@@ -73,4 +75,20 @@ a, a:hover, a:focus, a:active {
 /***************************************/
 /*************************************************************************/
 /*****************************IDs*****************************************/
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;            /* Footer height */
+}
+
+
 /*************************************************************************/
