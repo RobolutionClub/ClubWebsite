@@ -10,8 +10,8 @@ export default function Footer() {
   return (
     <footer>
       {/* <div className="footer">
-        <div class="row align-items-start">
-        <div class="col-5">
+        <div className="row align-items-start">
+        <div className="col-5">
           <div className="socials">
           <a href="/" className='footer-a'><img className="small-png" src={insta} alt="nil" /></a>
           <a href="/" className='footer-a'><img className="small-png" src={facebook} alt="nil" /></a>
@@ -19,7 +19,7 @@ export default function Footer() {
           <a href="/" className='footer-a'><img className="small-png" src={twitter} alt="nil" /></a>
           </div>
           </div>
-          <div class="col-lg-4 ">
+          <div className="col-lg-4 ">
           <div className="con">
           
             <ul className='navbar-nav footer-ul'>
@@ -28,12 +28,12 @@ export default function Footer() {
             </ul>
             </div>
             </div>
-            <div class="col-lg-3  ">
+            <div className="col-lg-3  ">
 
             <a href="/"><img className="roboimg-1" src={img} alt="nil" /></a>
             </div>
 
-            <div class=" tetera">
+            <div className=" tetera">
               @ 2022 Robolution Club of BIT
             </div> */}
 
@@ -44,8 +44,8 @@ export default function Footer() {
         
         </div> */}
       <div className="footer">
-        <div class="row align-items-center">
-          <div class="col">
+        <div className="row align-items-center">
+          <div className="col">
             <div className="socials">
               <a href="/" className="footer-a">
                 <img className="small-png" src={insta} alt="nil" />
@@ -61,7 +61,7 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div class="col-lg-2 ">
+          <div className="col-lg-2 ">
             <div className="con">
               <ul className="navbar-nav footer-ul">
                 <li className="footer-li">
@@ -77,7 +77,7 @@ export default function Footer() {
               </ul>
             </div>
           </div>
-          <div class="col image-toru">
+          <div className="col image-toru">
             
               <a href="/">
                 <img className="roboimg-1" src={img} alt="nil" />

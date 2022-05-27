@@ -10,10 +10,6 @@
 
 }
 
-/* .carousel-inner{
-    position: relative;
-    width: 100%;
-} */
 
 .carousel-inner .btn {
     position: absolute;
@@ -35,4 +31,22 @@
     font-size: 72px;
     font-weight: 200;
 
+}
+@media (max-width:1028px) {
+    .text{
+        position: absolute;
+        top: 30%;
+        left: 25%;
+        color: white;
+        font-family:'Times New Roman', Times, serif;
+        font-size: 30px;
+        font-weight: 200;
+    
+    }
+    .btn{
+       
+        font-size: 15px
+    }
+    
+    
 }

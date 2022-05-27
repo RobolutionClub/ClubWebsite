@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0
+}
+
+.yeet{
+    padding-top: 70px;
+}
+.img-1{
+    height: 500px;
+    width: 100%;
+    /* opacity: 0.8; */
+    
+   
+}
+
+
+
+.text-manthan{
+    font-family: 'Noto Serif', serif;
+    
+    position: absolute;
+    font-size: 4vw;
+    /* text-align: center; */
+    padding-left: 30rem;
+    color: wheat;
+    transform: translate(0%, -25rem);
+    -ms-transform: translate(-50%, -50%);
+    
+
+}
+
+
+.hyper{
+    padding-top: 60px;
+
+    position: absolute;
+    font-size: 4vw;
+    /* text-align: center; */
+    padding-left: 20rem;
+    color: wheat;
+    transform: translate(0%, -180%);
+    -ms-transform: translate(-50%, -50%);
+    color: #03A8F3;
+    
+
+}
+
+.hyper2{
+    padding-top: 30px;
+    position: absolute;
+    font-size: 4vw;
+    /* text-align: center; */
+    padding-left: 60rem;
+    color: wheat;
+    transform: translate(0, -193%);
+    -ms-transform: translate(-50%, -50%);
+    color: #03A8F3;
+    
+
+}
+
+h1{
+    padding-top: 10px;
+    color: wheat
+}
+
+.container{
+    padding: 0;
+    margin: 0;
+}
+
+
+@media (max-width:1024px) {
+    .img-1{
+        height: 300px;
+        width: 100%;
+        /* opacity: 0.8; */
+        
+       
+    }
+    
+    
+    
+    .text-manthan{
+        font-family: 'Noto Serif', serif;
+        
+        position: absolute;
+        font-size: 4vw;
+      
+        padding-left: 33vw;
+        color: white;
+        transform: translate(0%, -16rem);
+        -ms-transform: translate(-50%, -50%);
+        
+    
+    }
+    
+    
+    .hyper{
+        padding-top: 60px;
+    
+        position: absolute;
+        font-size: 4vw;
+        /* text-align: center; */
+        padding-left: 9vw;
+        color: wheat;
+        transform: translate(0%, -180%);
+        -ms-transform: translate(-50%, -50%);
+        color: #03A8F3;
+        
+    
+    }
+    
+    .hyper2{
+        padding-top: 30px;
+        position: absolute;
+        font-size: 4vw;
+        /* text-align: center; */
+        padding-left: 70vw;
+        color: wheat;
+        transform: translate(0, -200%);
+        -ms-transform: translate(-50%, -50%);
+        color: #03A8F3;
+        
+    
+    }
+    h1{
+        padding-top: 10px;
+        color: wheat;
+        font-size: 20px;
+    }
+
+    
+}
