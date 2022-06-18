@@ -12,5 +12,6 @@
 3. Registration page
 4. Blog page(a complete blogg App)
 5. Tutorials/Courses page.
+6.login for all
 
 https://gruxic.github.io/ClubWebsite/
