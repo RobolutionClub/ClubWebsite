@@ -28,6 +28,8 @@ export default function Navbar() {
           <li className="nav-item mx-2 my-1 text-light"><a href="/" className="nav-link">Board</a></li>
           <li className="nav-item mx-2 my-1 text-light"><a href="/" className="nav-link">About Us</a></li>
           <li className="nav-item mx-2 my-1 text-light"><a href="/" className="nav-link">Join Us</a></li>
+          <li className="nav-item mx-2 my-1 text-light"><a href="/" className="nav-link">Login</a></li>
+          <li className="nav-item mx-2 my-1 text-light"><a href="/" className="nav-link">Sign Up</a></li>
         </ul>
       </div>
     </nav>
