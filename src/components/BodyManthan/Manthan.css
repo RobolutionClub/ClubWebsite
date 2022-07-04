@@ -23,7 +23,7 @@
     font-size: 4vw;
     /* text-align: center; */
     padding-left: 30rem;
-    color: wheat;
+    color: black;
     transform: translate(0%, -25rem);
     -ms-transform: translate(-50%, -50%);
     
@@ -38,10 +38,10 @@
     font-size: 4vw;
     /* text-align: center; */
     padding-left: 20rem;
-    color: wheat;
+    
     transform: translate(0%, -180%);
     -ms-transform: translate(-50%, -50%);
-    color: #03A8F3;
+    color: #446f83;
     
 
 }
@@ -52,23 +52,24 @@
     font-size: 4vw;
     /* text-align: center; */
     padding-left: 60rem;
-    color: wheat;
+  
     transform: translate(0, -193%);
     -ms-transform: translate(-50%, -50%);
-    color: #03A8F3;
+    color: #446f83;
+    
     
 
 }
 
 h1{
     padding-top: 10px;
-    color: wheat
+    color: black
 }
 
-.container{
+/* .container{
     padding: 0;
     margin: 0;
-}
+} */
 
 
 @media (max-width:1024px) {

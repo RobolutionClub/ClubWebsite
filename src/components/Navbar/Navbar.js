@@ -2,6 +2,7 @@ import React from "react";
 import img from "./robolution.png";
 import'./Navbar.css'
 export default function Navbar() {
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
       <img className="roboimg" src={img} alt="nil" width={"30px"}/>

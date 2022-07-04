@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import Slider from './components/Slider/Slider';
 import BodyFirst from './components/Body-1/BodyFirst';
 import Manthan from './components/BodyManthan/Manthan';
+import Events from './components/Events/Events';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
   <Slider/>
   <BodyFirst data="What we do at Robolution"/>
   <Manthan/>
+  <Events/>
   <Footer/>
   </>
 

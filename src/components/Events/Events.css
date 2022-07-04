@@ -1,0 +1,27 @@
+.modifications:hover{
+    background-image: url('https://wallpaperaccess.com/full/1224636.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    transform: scale(1.1);
+    color: aliceblue;
+    /* width: 30rem;
+    height: 23rem; */
+
+}
+.h1-events{
+    color: black;
+    text-align: center;
+    font-family: 'Noto Serif', serif;
+    font-weight: bold;
+    font-size: 56px;
+}
+
+
+
+.backgrounde{
+    
+    background-image: url(https://img.freepik.com/free-vector/abstract-gear-wheel-mechanism-background_41981-1136.jpg?w=740);
+    
+
+}
+    

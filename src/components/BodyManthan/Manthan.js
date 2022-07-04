@@ -5,20 +5,20 @@ export default function Manthan() {
     <>
       <div className="yeet">
         <img
-          src="https://ak.picdn.net/shutterstock/videos/9690608/thumb/1.jpg"
+          src="https://png.pngtree.com/thumb_back/fw800/background/20190223/ourmid/pngtree-simple-modern-artificial-robot-background-intelligencerobotuniversespaceearthbluetechnology-lightcitytechnology-linestechnology-image_66540.jpg"
           alt=""
           className="img-1"
         />
         <div className="text-manthan">Manthan 2022</div>
       </div>
-      <div class="wadu">
-        <div class="row align-items-start col-1">
-          <div class="col hyper">
+      <div className="wadu">
+        <div className="row align-items-start col-1">
+          <div className="col hyper">
             Events
             <h1>3</h1>
           </div>
 
-          <div class="col hyper2">
+          <div className="col hyper2">
             
             <div className="content">
               fest

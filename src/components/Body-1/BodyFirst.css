@@ -1,7 +1,7 @@
-*{
+/* *{
     padding: 0;
     margin: 0;
-}
+} */
 
 .container{
     padding-top: 30px;
@@ -55,15 +55,46 @@ animation: slideUp ease .5s forwards 1.2s;
     padding-top: 30px;
 }
 
-/* .main{
-    width: 100%;
-} */
+
 
 .terr{
     display: flex;
     flex-direction: column;
     padding-top: 30px;
+    width: 100%;
 }
 .span-1{
     padding-top: 20px;
+   
+}
+.whole{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 40px;
+}
+.align-items-center {
+    align-items: center!important;
+    justify-content: center;
+}
+.main::after{
+    content: '';
+    background-image: url('./picture.png');
+    background-repeat: no-repeat;
+    background-size:contain;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
 }
