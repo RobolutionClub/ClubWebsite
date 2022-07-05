@@ -1,9 +1,10 @@
-import React from 'react'
-import { useState } from 'react'
-
+import React,{ useState }  from 'react'
+import { useNavigate } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar'
 
 const host="http://localhost:5000"
 const Login = (props) =>{
+  const nav=useNavigate()
     const [credentials, setcredentials] = useState({email:"",password:""})
 
     const onChange=(e)=>{
@@ -15,7 +16,7 @@ const Login = (props) =>{
         setcredentials({email:"",password:""})
 
 
-        const response=await fetch(`${host}/user/login/createuser`,{
+        const response=await fetch(`${host}/user/login/login`,{
             method: "POST",
             
             headers: {
@@ -27,18 +28,17 @@ const Login = (props) =>{
             body:JSON.stringify({email:credentials.email,password:credentials.password})
 
         })
-        const json=response.json()
+        const json=await response.json()
+      
         if(json.success){
+           
+            nav("/")
             localStorage.setItem('token',json.authtoken)
-            // history("/")
-        }
-       
+                    
+            console.log('signed in sucesfully')
             
-        
-
-
-
-    }
+        }
+      }
 
   return (
     <>
