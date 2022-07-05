@@ -9,40 +9,6 @@ import twitter from "../Footer/twitter.png";
 export default function Footer() {
   return (
     <footer>
-      {/* <div className="footer">
-        <div className="row align-items-start">
-        <div className="col-5">
-          <div className="socials">
-          <a href="/" className='footer-a'><img className="small-png" src={insta} alt="nil" /></a>
-          <a href="/" className='footer-a'><img className="small-png" src={facebook} alt="nil" /></a>
-          <a href="/" className='footer-a'><img className="small-png" src={linkedin} alt="nil" /></a>
-          <a href="/" className='footer-a'><img className="small-png" src={twitter} alt="nil" /></a>
-          </div>
-          </div>
-          <div className="col-lg-4 ">
-          <div className="con">
-          
-            <ul className='navbar-nav footer-ul'>
-            <li className='footer-li'><a href='/' className='nav-link '>Contact Us</a></li>
-            <li className='footer-li'><a href='/' className='nav-link '>Join Us</a></li>
-            </ul>
-            </div>
-            </div>
-            <div className="col-lg-3  ">
-
-            <a href="/"><img className="roboimg-1" src={img} alt="nil" /></a>
-            </div>
-
-            <div className=" tetera">
-              @ 2022 Robolution Club of BIT
-            </div> */}
-
-      {/* </div>
-
-       
-        
-        
-        </div> */}
       <div className="footer">
         <div className="row align-items-center">
           <div className="col">

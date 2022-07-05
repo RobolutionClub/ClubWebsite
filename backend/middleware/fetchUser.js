@@ -1,8 +1,8 @@
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "AKASH";
+const JWT_SECRET = "akash";
 
 
-const fetchuser=(req,res,next)=>{
+const fetchuser=async (req,res,next)=>{
     const token=req.header('auth-token')
     console.log(token +"etttette")
     if (!token){
@@ -10,7 +10,9 @@ const fetchuser=(req,res,next)=>{
 
     }
     try{
+        console.log("workin till here")
         const data=jwt.verify(token,JWT_SECRET)
+        console.log("verifying")
         req.user=data.user
         next()
 

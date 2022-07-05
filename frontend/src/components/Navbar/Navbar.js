@@ -1,7 +1,7 @@
 import React ,{useEffect,useState} from "react";
 import img from "./robolution.png";
 import'./Navbar.css'
-import {Link,navigate, useNavigate} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 
 
 
@@ -83,15 +83,15 @@ export default function Navbar() {
         { localStorage.getItem('token')?<div className="Welcome-name" style={{color:"white"}}>{"Welcome "+name}</div>:null}
         <ul className="navbar-nav ms-auto mx-3 ">
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Home</Link></li>
-          <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Events</Link></li>
+          <li className="nav-item mx-2 my-1 text-light"><Link to="/events" className="nav-link">Events</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Board</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">About Us</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Join Us</Link></li>
           {!localStorage.getItem('token')?
-        <form className='d-flex'>
+        <div>
         <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
         <Link className="btn btn-primary mx-1" to="/register" role="/register">Register</Link>
-        </form>:<button onClick={handleLogout} className="btn btn-primary mx-1">Logout</button>}
+        </div>:<button onClick={handleLogout} className="btn btn-primary mx-1">Logout</button>}
         
           
         </ul>

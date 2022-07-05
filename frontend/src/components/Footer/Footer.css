@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    
 }
 
 
@@ -11,7 +12,7 @@
 
     
     color: white;
-    width: 100%;
+    width:100%
 }
 
 
@@ -30,14 +31,14 @@
     
 }
 .socials{
-    /* display: flex; */
+    
     padding-left: 30px;
     padding-top: 30px;
     
 }
 .footer-a {
     padding-right: 16px;
-    /* display: flex; */
+ 
     margin-top: 23px;
 }
 
