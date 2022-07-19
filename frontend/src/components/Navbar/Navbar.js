@@ -7,9 +7,9 @@ import {Link,useNavigate} from "react-router-dom";
 
 export default function Navbar() {
   let navigate=useNavigate()
-  const handleLogout=()=>{
-    localStorage.removeItem('token')
-    // setname("")
+  const handleLogout=async()=>{
+   localStorage.removeItem('token')
+    
 
     navigate('/')
    
@@ -17,15 +17,18 @@ export default function Navbar() {
   }
 
   const [name, setname] = useState()
+  const[storage,setstorage]=useState()
 
   useEffect(() => {
-    if(localStorage.getItem('token')){
+   
+   
+    const item =window.localStorage.getItem('token')
+    setstorage(item)
+    if(storage){
       TheUsername()
     }
-   
-
   
-  }, [])
+  }, [storage])
   
   const host="http://localhost:5000"
 
@@ -41,22 +44,15 @@ export default function Navbar() {
         "Content-Type": "application/json",
         'auth-token':authToken
        
-          // 'Accept':'application/json' 
+          
       },
      
 
     })
     const json=await data.json()
-    console.log(json+"asas")
-    setname(json.name)
     console.log(json.name)
     setname(json.name)
-    // console.log(name)
-  //   if(json.success){
    
-     
-  // }
-
   
 }
   
@@ -79,13 +75,13 @@ export default function Navbar() {
         <span className="navbar-toggler-icon"></span>
       </button>
       <div className="collapse navbar-collapse " id="navbarSupportedContent">
-        {/* {name?null:<div style={{color:"white"}}>{name}</div>} */}
+
         { localStorage.getItem('token')?<div className="Welcome-name" style={{color:"white"}}>{"Welcome "+name}</div>:null}
         <ul className="navbar-nav ms-auto mx-3 ">
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Home</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/events" className="nav-link">Events</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Board</Link></li>
-          <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">About Us</Link></li>
+          <li className="nav-item mx-2 my-1 text-light"><Link to="/About" className="nav-link">About Us</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Join Us</Link></li>
           {!localStorage.getItem('token')?
         <div>

@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0
+}
+
+/* .henlo{
+    width: 99vw;
+    height: 143vh;
+    padding-top: 60px;
+    
+    background-image: url('../pics/download.jpg');
+    background-repeat: no-repeat;
+    background-position: 50% center;
+   
+    
+    background-size: 53rem;
+   
+    opacity: 0.2;
+} */
+.center{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.center::before{
+    content: '';
+    background-image: url('../pics/download.jpg');
+    background-repeat: no-repeat;
+    background-size: 70rem;
+    position: absolute;
+    /* background-position: center; */
+    left: 0px;
+    top: 20rem;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+.aboutush1{
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+.established{
+
+    margin: 30px 60px 0px 40px;
+    font-size: 1.1rem;
+}
+.aboutush2{
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+
+}
+.Bod-1{
+    margin-top: 140px;
+}
