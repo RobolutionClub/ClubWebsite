@@ -17,15 +17,21 @@ export default function Navbar() {
   }
 
   const [name, setname] = useState()
-  const[storage,setstorage]=useState()
+  const[storage,setstorage]=useState(localStorage.getItem('token'))
+
+ 
 
   useEffect(() => {
+
    
    
-    const item =window.localStorage.getItem('token')
+    const item =localStorage.getItem('token')
     setstorage(item)
     if(storage){
       TheUsername()
+    }
+    else{
+      console.log("problem")
     }
   
   }, [storage])

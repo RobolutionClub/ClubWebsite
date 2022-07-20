@@ -2,9 +2,38 @@ import React from 'react'
 import './Aboutus.css'
 import bitpic from '../pics/download.jpg'
 const Aboutus = () => {
+  const host="http://localhost:5000";
+  const [bodpic, setbodpic] = useState({photo:"",year:"",post:""})
+
+
+  useEffect(() => {
+    ThePicture()
+  
+  }, [])
+
+  const ThePicture=()=>{
+    const response=await fetch(`${host}/user/login/createuser`,{
+      method:"POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body:JSON.stringify({photo:bodpic.photo,post:bodpic.photo,year:bodpic.year})
+
+
+    })
+    const json=await response.json()
+    console.log(json)
+
+  }
+
+  const handleClick=()=>{
+    
+  }
+  
   return (
     <div className='center'>
-    {/* <img src={bitpic} alt="" className='image-aboutus' style={{style:"width:100%"}} /> */}
+      <button onClick={handleClick}></button>
+    
     <h1 className='aboutush1'>
         About Us
     </h1>
@@ -23,6 +52,8 @@ const Aboutus = () => {
   </div>
   </div>
   <h2 className='Bod-1'>Our Board Over the years</h2>
+  <h3>2022-2023</h3>
+
 
     </div>
   )

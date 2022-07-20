@@ -32,13 +32,14 @@ const Login = (props) => {
 
     if (json.success) {
       // localStorage.setItem("token", json.authtoken);
-      window.localStorage.setItem("token", json.authtoken)
+
 
       console.log("signed in sucesfully");
       console.log(json.authtoken)
       
-      
+      localStorage.setItem("token", json.authtoken)
       nav('/');
+     
       window.location.reload();
       
 
