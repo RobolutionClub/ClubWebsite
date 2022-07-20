@@ -39,7 +39,6 @@ const Login = (props) => {
       
       localStorage.setItem("token", json.authtoken)
       nav('/');
-     
       window.location.reload();
       
 
