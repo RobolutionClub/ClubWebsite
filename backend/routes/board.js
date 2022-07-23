@@ -1,15 +1,20 @@
 const express = require("express");
 
 const Board=require('../models/BoardMembersSchema')
-
+const {  validationResult,body } = require('express-validator');
 
 const router = express.Router();
 
 
-router.post('/createbod',async(req,res)=>{
+router.post('/createbod',[
+    body("name").isLength({min:3}),
+    body("post").isLength({min:3}),
+  
+],async(req,res)=>{
+
  try{
-    const {photo,post,year}=req.body
-    console.log("photo")
+    const {photo,post,year,name}=req.body
+ 
 
     const errors = validationResult(req);
     if(!errors.isEmpty()){
@@ -17,13 +22,17 @@ router.post('/createbod',async(req,res)=>{
 
     }
     const pic=new Board({
+        name:name,
         post:post,
         year:year,
         photo:photo
     })
     const savedpic=await pic.save();
+   
+    return res.status(200).json({data:savedpic})
+   
  }catch(error){
-    console.log(error.message);
+   
     res.status(500).send("some error from our side ");
  }
 

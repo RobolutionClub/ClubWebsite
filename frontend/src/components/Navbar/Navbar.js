@@ -30,9 +30,7 @@ export default function Navbar() {
     if(storage){
       TheUsername()
     }
-    else{
-      console.log("problem")
-    }
+  
   
   }, [storage])
   
@@ -56,7 +54,7 @@ export default function Navbar() {
 
     })
     const json=await data.json()
-    console.log(json.name)
+   
     setname(json.name)
    
   
@@ -86,13 +84,13 @@ export default function Navbar() {
         <ul className="navbar-nav ms-auto mx-3 ">
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Home</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/events" className="nav-link">Events</Link></li>
-          <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Board</Link></li>
+         
           <li className="nav-item mx-2 my-1 text-light"><Link to="/About" className="nav-link">About Us</Link></li>
           <li className="nav-item mx-2 my-1 text-light"><Link to="/" className="nav-link">Join Us</Link></li>
           {!localStorage.getItem('token')?
         <div>
-        <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
-        <Link className="btn btn-primary mx-1" to="/register" role="/register">Register</Link>
+        <Link className="btn btn-primary mx-1" to="/login" style={{display:"none"}} role="button">Login</Link>
+        <Link className="btn btn-primary mx-1" to="/register" role="/register" style={{display:"none"}} >Register</Link>
         </div>:<button onClick={handleLogout} className="btn btn-primary mx-1">Logout</button>}
         
           

@@ -9,7 +9,7 @@ const fetchuser=require("../middleware/fetchuser")
 const JWT_SECRET="akash"
 
 
-router.post("/createuser",
+router.post('/createuser',
 [
     body("name").isLength({min:3}),
     body("email").isEmail(),

@@ -13,6 +13,10 @@ const bodSchema=new Schema({
     },
     photo:{
         type:String
+    },
+    name:{
+        type:String,
+        required:true
     }
 })
 

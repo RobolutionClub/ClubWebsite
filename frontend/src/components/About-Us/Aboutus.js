@@ -3,31 +3,59 @@ import './Aboutus.css'
 import bitpic from '../pics/download.jpg'
 const Aboutus = () => {
   const host="http://localhost:5000";
-  const [bodpic, setbodpic] = useState({photo:"",year:"",post:""})
+  const [data, setdata] = useState({photo:"",year:"",post:"",name:""})
 
 
-  useEffect(() => {
-    ThePicture()
+  // useEffect(() => {
+  //   ThePicture()
   
-  }, [])
+  // }, [])
 
-  const ThePicture=async()=>{
-    const response=await fetch(`${host}/user/login/createuser`,{
+
+  const handleChange=(e)=>{
+    setdata({...data,[e.target.name]:e.target.value})
+
+   
+    
+  }
+  const handleFile=(cob)=>{
+    
+    
+   
+  
+    if (cob.target.files && cob.target.files.length===1){
+   
+      const pickedfile = cob.target.files[0];
+      let reader=new FileReader()
+      reader.onload=function(){
+        setdata({...data,photo:reader.result})
+     
+      }
+      reader.readAsDataURL(pickedfile);
+  
+
+    }
+  
+    
+  }
+  const handleClick=async(e)=>{
+    e.preventDefault();
+    
+    const response=await fetch(`${host}/user/admin/createbod`,{
       method:"POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body:JSON.stringify({photo:bodpic.photo,post:bodpic.photo,year:bodpic.year})
+      body:JSON.stringify({photo:data.photo,post:data.post,year:data.year,name:data.name})
 
 
     })
     const json=await response.json()
-    console.log(json)
+  
 
-  }
 
-  const handleClick=()=>{
-    
+
+
   }
   
   return (
@@ -39,19 +67,71 @@ const Aboutus = () => {
 </button>:null}
 
 
-<div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog">
     <div className="modal-content">
       <div className="modal-header">
-        <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 className="modal-title" id="exampleModalLabel">Add a member</h5>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <form >
       <div className="modal-body">
-        ...
+      <label htmlFor="name" className="form-label">
+            name
+          </label>
+        <input type="text"
+        onChange={handleChange}
+        className="form-control"
+        name="name"
+        id="name"
+        minLength={3} required
+       
+        
+        />
+        <label htmlFor="post">
+          Post/designation
+        </label>
+        <input type="text" 
+        name="post" 
+        className="form-control"
+        id="post"
+        onChange={handleChange}
+        minLength={3} required
+
+        
+        
+        />
+        <label htmlFor="year">
+         Select the year
+        </label>
+        <input type="number" 
+        placeholder='YYYY'
+        name="year" 
+        className="form-control"
+        id="year"
+        onChange={handleChange}
+        minLength={4} required 
+        
+        />
+        <label htmlFor="post">
+         Input file
+        </label>
+        <input type="file"
+        onChange={handleFile}
+        accept='.jpg,.png,.jpeg' 
+        name="photo" 
+        className="form-control"
+        id="photo"
+        minLength={1} required 
+
+        
+        
+        />
       </div>
+      </form>
       <div className="modal-footer">
         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" className="btn btn-primary">Save changes</button>
+        <button disabled={data.name.length<3 || data.post.length<3 ||data.year.length<4}   type="submit" className="btn btn-primary" onClick={handleClick}>Save changes</button>
       </div>
     </div>
   </div>
