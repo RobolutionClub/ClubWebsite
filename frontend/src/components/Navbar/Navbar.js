@@ -5,15 +5,11 @@ import {Link,useNavigate} from "react-router-dom";
 
 
 
-export default function Navbar() {
+export default function Navbar(props) {
   let navigate=useNavigate()
   const handleLogout=async()=>{
-   localStorage.removeItem('token')
-    
-
+   localStorage.removeItem('token') 
     navigate('/')
-   
-
   }
 
   const [name, setname] = useState()
@@ -37,6 +33,7 @@ export default function Navbar() {
   const host="http://localhost:5000"
 
   const TheUsername=async(req,res)=>{
+    props.SetLoader(true)
     const authToken = localStorage.getItem('token')
    
 
@@ -56,6 +53,7 @@ export default function Navbar() {
     const json=await data.json()
    
     setname(json.name)
+    props.SetLoader(false)
    
   
 }

@@ -5,30 +5,7 @@ export default function Slider() {
   function sleep(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
-  // let intervalfunc=()=>{
-  //     let a='Robolution Club'
-  //     let b=''
-  //     for( let i=0;i<a.length;i++){
-  //       sleep(1000);
-
-  //       let r=b+a[i]
-  //       // b.concat(a[i])
-
-  //       // let y=r
-  //       let c=document.body.getElementsByClassName('text')
-  //       console.log(r)
-
-  //       // c[0].textContent="waduuu"
-  //       c[0].textContent=`${r}`
-  //     }
-
-  //   }
-  //   // intervalfunc()
-
-  //   setInterval(()=>{
-  //     intervalfunc()
-
-  //   },1000)
+  
 
   return (
     <div

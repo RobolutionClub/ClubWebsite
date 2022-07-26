@@ -1,15 +1,34 @@
 import React,{useEffect,useState} from 'react'
 import './Aboutus.css'
 import bitpic from '../pics/download.jpg'
+import Card from './Card'
 const Aboutus = () => {
   const host="http://localhost:5000";
   const [data, setdata] = useState({photo:"",year:"",post:"",name:""})
-
-
-  // useEffect(() => {
-  //   ThePicture()
+  const [content, setcontent] = useState([])
+  const area=[]
+  useEffect(() => {
+   
+    TheBoard()
   
-  // }, [])
+  }, [])
+  
+
+  const TheBoard=async()=>{
+    const response=await fetch(`${host}/user/admin/getbod`,{
+      method:'GET',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      
+    })
+    const json=await response.json()
+    
+    setcontent(json)
+    console.log(content)
+
+
+  }
 
 
   const handleChange=(e)=>{
@@ -156,6 +175,38 @@ const Aboutus = () => {
   </div>
   <h2 className='Bod-1'>Our Board Over the years</h2>
   <h3>2022-2023</h3>
+  <div className="row">
+  {content.map((element)=>{
+    
+   return (
+  <>
+   {element.year==="2022"?<Card  name={element.name} post={element.post} photo={element.photo} year={element.year}/>:false}
+   </>
+   )
+  
+
+  })}
+  </div>
+  <h3>2021-2022</h3>
+  <div className="row">
+  {content.map((element)=>{
+    
+   return (
+   
+    <>
+   {element.year==="2021"?<Card  name={element.name} post={element.post} photo={element.photo} year={element.year}/>:null}
+   </>
+  
+   )
+  
+
+  })}
+  </div>
+  
+
+
+  
+
 
 
     </div>

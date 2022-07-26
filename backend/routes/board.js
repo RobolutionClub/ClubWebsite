@@ -38,4 +38,26 @@ router.post('/createbod',[
 
 })
 
+
+router.get('/getbod',[
+    
+
+],async(req,res)=>{
+
+ try{
+    const bod=await Board.find()
+    res.json(bod)
+
+ 
+
+
+   
+ }catch(error){
+   
+    res.status(500).send("some error from our side ");
+ }
+
+})
+
+
 module.exports=router

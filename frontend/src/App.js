@@ -6,11 +6,20 @@ import Login from './components/Login/Login'
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import EventPage from './components/EventsPage/EventPage';
 import Aboutus from './components/About-Us/Aboutus';
+import Loader from './components/Loader/Loader';
+import { useState } from 'react';
 function App() {
+  const [loader, setloader] = useState(false)
+  const SetLoader=(isloading)=>{
+    setloader(isloading)
+
+  }
   return (
     <>
+   
     <Router>
-    <Navbar/>
+    <Navbar SetLoader={SetLoader}/>
+    <Loader loader={loader}/> 
     <Routes>
     <Route  path="/" element={<Homepage/>}/>
     <Route  path="/login" element={ <Login/>}/>
