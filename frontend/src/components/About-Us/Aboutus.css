@@ -54,3 +54,51 @@
 .Bod-1{
     margin-top: 140px;
 }
+/* .modifications{
+    background-image: url('/static/assets/images/service-bg.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    transform: scale(1.1);
+} */
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+    border: 2px solid gray;
+}
+.card-title{
+  
+    font-size: 25px;
+    font-family: 'Pacifico', cursive;
+}
+.card-img-top{
+    padding-top: 20px;
+    border-radius: 50%;
+    object-fit:cover;
+    width: 200px;
+    
+  }
+  .card-text, .card-post, .card-title {
+    text-align: center;
+  }
+  .card-post{
+    
+    font-size: 22px;
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+  }
+  .fa-2x{
+    padding-right: 10px;
+    color: black;
+  }
+  .hoverimg:hover{
+  
+        /* background-image: url('/static/assets/images/service-bg.jpg');
+        background-repeat: no-repeat;
+        background-size:cover; */
+        transform: scale(1.1);
+      
+      
+  }
