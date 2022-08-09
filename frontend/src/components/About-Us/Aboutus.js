@@ -1,16 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./Aboutus.css";
 import bitpic from "../pics/download.jpg";
 import Card from "./Card";
-const Aboutus = () => {
+import { storage } from "../../firebase";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+
+const Aboutus = (props) => {
   const host = "http://localhost:5000";
   const [data, setdata] = useState({ photo: "", year: "", post: "", name: "" });
-  const [content, setcontent] = useState([]);
-  const area = [];
+  const initial = [];
+  const [content, setcontent] = useState(initial);
+  const [image, setimage] = useState("");
+  const refClose = useRef();
   useEffect(() => {
     TheBoard();
-  }, []);
+  }, [content]);
 
+  const HandleDelete = async (id) => {
+    const request = fetch(`${host}/user/admin/delete/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const json = await request.json();
+    const newdata = content.filter((x) => {
+      return x._id !== id;
+    });
+    setcontent(newdata);
+  };
   const TheBoard = async () => {
     const response = await fetch(`${host}/user/admin/getbod`, {
       method: "GET",
@@ -21,7 +39,6 @@ const Aboutus = () => {
     const json = await response.json();
 
     setcontent(json);
-    console.log(content);
   };
 
   const handleChange = (e) => {
@@ -29,30 +46,45 @@ const Aboutus = () => {
   };
   const handleFile = (cob) => {
     if (cob.target.files && cob.target.files.length === 1) {
-      const pickedfile = cob.target.files[0];
-      let reader = new FileReader();
-      reader.onload = function () {
-        setdata({ ...data, photo: reader.result });
-      };
-      reader.readAsDataURL(pickedfile);
+      setimage(cob.target.files[0]);
+      console.log(cob.target.files[0]);
+
+      // const pickedfile = cob.target.files[0];
+      // let reader = new FileReader();
+      // reader.onload = function () {
+      // };
+      // reader.readAsDataURL(pickedfile);
     }
   };
-  const handleClick = async (e) => {
-    e.preventDefault();
 
+  const CreateUpload = (e) => {
+    e.preventDefault();
+    const storage = getStorage();
+    const storageRef = ref(storage, `images/${image.name}`);
+    uploadBytes(storageRef, image).then((snapshot) => {
+      getDownloadURL(storageRef).then((url) => {
+        setimage(url);
+        console.log(url);
+      });
+    });
+  };
+
+  const handleClick = async (e) => {
     const response = await fetch(`${host}/user/admin/createbod`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        photo: data.photo,
+        photo: image,
         post: data.post,
         year: data.year,
         name: data.name,
       }),
     });
     const json = await response.json();
+    setcontent(content.concat(json));
+    refClose.current.click();
   };
 
   return (
@@ -134,11 +166,13 @@ const Aboutus = () => {
                   minLength={1}
                   required
                 />
+                <button onClick={CreateUpload}>Upload</button>
               </div>
             </form>
             <div className="modal-footer">
               <button
                 type="button"
+                ref={refClose}
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
@@ -148,7 +182,8 @@ const Aboutus = () => {
                 disabled={
                   data.name.length < 3 ||
                   data.post.length < 3 ||
-                  data.year.length < 4
+                  data.year.length < 4 ||
+                  image === null
                 }
                 type="submit"
                 className="btn btn-primary"
@@ -208,7 +243,9 @@ const Aboutus = () => {
         </div>
       </div>
       <h2 className="Bod-1">Our Board Over the years</h2>
-      <center><h3>2022-2023</h3></center>
+      <center>
+        <h3>2022-2023</h3>
+      </center>
       <div className="row">
         {content.map((element) => {
           return (
@@ -227,7 +264,9 @@ const Aboutus = () => {
           );
         })}
       </div>
-      <center><h3>2021-2022</h3></center>
+      <center>
+        <h3>2021-2022</h3>
+      </center>
       <div className="row">
         {content.map((element) => {
           return (
@@ -238,6 +277,7 @@ const Aboutus = () => {
                   post={element.post}
                   photo={element.photo}
                   year={element.year}
+                  Delete={HandleDelete}
                 />
               ) : null}
             </>

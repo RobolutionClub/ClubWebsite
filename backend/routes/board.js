@@ -6,6 +6,9 @@ const {  validationResult,body } = require('express-validator');
 const router = express.Router();
 
 
+
+
+
 router.post('/createbod',[
     body("name").isLength({min:3}),
     body("post").isLength({min:3}),
@@ -56,6 +59,24 @@ router.get('/getbod',[
    
     res.status(500).send("some error from our side ");
  }
+
+})
+
+router.delete('/delete/:id',async(req,res)=>{
+   let bruh=await Board.findByIdAndRemove(req.params.id)
+   try{
+   res.json({"status":"deleted sucessfully"})
+   }catch(error){
+      res.json({"error":error})
+   }
+
+   // if(!data){
+   //    return res.status(404).send("not found")
+   //   }
+   //   if(note.user.toString() !==req.user.id){
+   //    return res.status(401).send("seriously??trying to hack me ")
+   //   }
+
 
 })
 
