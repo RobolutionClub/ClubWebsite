@@ -25,9 +25,9 @@ const Aboutus = (props) => {
         "Content-Type": "application/json",
       },
     });
-    console.log("we in");
-    const json = await response.json();
-    console.log(json);
+
+    await response.json();
+ 
     const newdata = content.filter((x) => {
       return x._id !== id;
     });
@@ -51,7 +51,7 @@ const Aboutus = (props) => {
   const handleFile = (cob) => {
     if (cob.target.files && cob.target.files.length === 1) {
       setimage(cob.target.files[0]);
-      console.log(cob.target.files[0]);
+     
 
       // const pickedfile = cob.target.files[0];
       // let reader = new FileReader();
@@ -69,7 +69,7 @@ const Aboutus = (props) => {
     uploadBytes(storageRef, image).then((snapshot) => {
       getDownloadURL(storageRef).then((url) => {
         setimage(url);
-        console.log(url);
+       
         setloading(false)
       });
     });

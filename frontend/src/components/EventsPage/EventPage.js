@@ -27,7 +27,7 @@ const EventPage = () => {
   const handleFile=(e)=>{
     if(e.target.files && e.target.files.length===1){
       setimage(e.target.files[0])
-      console.log(e.target.files[0]);
+      
       
     }
 
@@ -43,7 +43,7 @@ const EventPage = () => {
      
       getDownloadURL(storageRef).then((url) => {
         setimage(url);
-        console.log(url);
+      
         setloading(false)
       });
     });
