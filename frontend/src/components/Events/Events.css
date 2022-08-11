@@ -1,9 +1,9 @@
 .modifications:hover{
-    background-image: url('https://wallpaperaccess.com/full/1224636.jpg');
+   
     background-repeat: no-repeat;
     background-size:cover;
     transform: scale(1.1);
-    color: aliceblue;
+  
     /* width: 30rem;
     height: 23rem; */
 
@@ -19,9 +19,19 @@
 
 
 .backgrounde{
+    margin-top: 100px;
     
     background-image: url(https://img.freepik.com/free-vector/abstract-gear-wheel-mechanism-background_41981-1136.jpg?w=740);
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+   
     
 
 }
     
+body{
+    background-image: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

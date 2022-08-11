@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./Aboutus.css";
-import bitpic from "../pics/download.jpg";
+
 import Card from "./Card";
-import { storage } from "../../firebase";
+
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { Loader } from "../EventsPage/Loader";
 
 const Aboutus = (props) => {
   const host = "http://localhost:5000";
@@ -11,19 +12,22 @@ const Aboutus = (props) => {
   const initial = [];
   const [content, setcontent] = useState(initial);
   const [image, setimage] = useState("");
+  const [loading, setloading] = useState(false)
   const refClose = useRef();
   useEffect(() => {
     TheBoard();
   }, [content]);
 
   const HandleDelete = async (id) => {
-    const request = fetch(`${host}/user/admin/delete/${id}`, {
+    const response = await fetch(`${host}/user/admin/deletepost/${id}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
       },
     });
-    const json = await request.json();
+    console.log("we in");
+    const json = await response.json();
+    console.log(json);
     const newdata = content.filter((x) => {
       return x._id !== id;
     });
@@ -61,10 +65,12 @@ const Aboutus = (props) => {
     e.preventDefault();
     const storage = getStorage();
     const storageRef = ref(storage, `images/${image.name}`);
+    setloading(true)
     uploadBytes(storageRef, image).then((snapshot) => {
       getDownloadURL(storageRef).then((url) => {
         setimage(url);
         console.log(url);
+        setloading(false)
       });
     });
   };
@@ -166,7 +172,10 @@ const Aboutus = (props) => {
                   minLength={1}
                   required
                 />
+                <div>
                 <button onClick={CreateUpload}>Upload</button>
+                <Loader isloading={loading}/>
+                </div>
               </div>
             </form>
             <div className="modal-footer">
@@ -183,7 +192,8 @@ const Aboutus = (props) => {
                   data.name.length < 3 ||
                   data.post.length < 3 ||
                   data.year.length < 4 ||
-                  image === null
+                  image.length === 0||
+                  loading===true
                 }
                 type="submit"
                 className="btn btn-primary"
@@ -252,10 +262,13 @@ const Aboutus = (props) => {
             <>
               {element.year === "2022" ? (
                 <Card
+                  key={element._id}
                   name={element.name}
                   post={element.post}
                   photo={element.photo}
                   year={element.year}
+                  id={element._id}
+                  Deletepost={HandleDelete}
                 />
               ) : (
                 false
@@ -273,11 +286,13 @@ const Aboutus = (props) => {
             <>
               {element.year === "2021" ? (
                 <Card
+                  key={element._id}
                   name={element.name}
                   post={element.post}
                   photo={element.photo}
                   year={element.year}
-                  Delete={HandleDelete}
+                  id={element._id}
+                  Deletepost={HandleDelete}
                 />
               ) : null}
             </>

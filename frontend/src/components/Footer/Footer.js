@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import "./responsive.css";
+
 import img from "../Navbar/robolution.png";
 import insta from "../Footer/instagram.png";
 import facebook from "../Footer/facebook.png";
@@ -8,10 +8,10 @@ import linkedin from "../Footer/linkedin.png";
 import twitter from "../Footer/twitter.png";
 export default function Footer() {
   return (
-    <footer>
-      <div className="footer">
-        <div className="row align-items-center">
-          <div className="col">
+    <div className="height">
+      <div class="container text-start">
+        <div class="row align-items-start">
+          <div class="col">
             <div className="socials">
               <a href="/" className="footer-a">
                 <img className="small-png" src={insta} alt="nil" />
@@ -27,34 +27,27 @@ export default function Footer() {
               </a>
             </div>
           </div>
-          <div className="col-lg-2 ">
-            <div className="con">
-              <ul className="navbar-nav footer-ul">
-                <li className="footer-li">
-                  <a href="/" className="nav-link ">
-                    Contact Us
-                  </a>
-                </li>
-                <li className="footer-li">
-                  <a href="/" className="nav-link ">
-                    Join Us
-                  </a>
-                </li>
-              </ul>
+          <div class="col">
+            <div className="main">
+              <div className="inner">
+                <a href="/" className="footer-a">
+                  Contact Us
+                </a>
+                <a href="/" className="footer-a">
+                  Join Us
+                </a>
+              </div>
+              <div className="padding">@2022 Robolution Club of BIT</div>
             </div>
           </div>
-          <div className="col image-toru">
-            
-              <a href="/">
-                <img className="roboimg-1" src={img} alt="nil" />
-              </a>
-            
-          </div>
-          <div className="copyright">
-          ©2022 Robolution Club of BIT
+
+          <div class="col size">
+            <center>
+              <img src={img} alt="" className="roboimg" />
+            </center>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
   );
 }

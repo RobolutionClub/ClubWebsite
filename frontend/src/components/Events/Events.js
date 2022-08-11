@@ -3,6 +3,9 @@ import "./Events.css";
 export default function Events() {
   return (
     <>
+    <body>
+      
+ 
     <div className="backgrounde">
     <h1 className="h1-events">Upcoming Events and Workshops</h1>
       <div className="container">
@@ -58,6 +61,7 @@ export default function Events() {
         </div>
       </div>
       </div>
+      </body>
     </>
   );
 }

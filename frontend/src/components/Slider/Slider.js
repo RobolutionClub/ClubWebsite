@@ -2,9 +2,7 @@ import React from "react";
 import Typical from "react-typical";
 import "./Slider.css";
 export default function Slider() {
-  function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
+  
   
 
   return (

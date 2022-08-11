@@ -13,6 +13,7 @@ connectToMongo();
 
 app.use('/user/login',require('./routes/users'))
 app.use('/user/admin',require('./routes/board'))
+app.use('/events',require('./routes/events'))
 
 
 
